@@ -1,0 +1,72 @@
+﻿@model Remont_Kursovoi.Журнал_выполненных_ремонтов
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3>Удалить эту запись о ремонте?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Дата начала
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_начала)
+        </dd>
+
+        <dt>
+            Дата окончания
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_окончания)
+        </dd>
+
+        <dt>
+            ID планового ремонта
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.График_плановых_техобслуживаний.ID_планового_ремонта)
+        </dd>
+
+        <dt>
+            Экземпляр
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Экземпляры_оборудований.Наименование)
+        </dd>
+
+        <dt>
+           Тип ремонта
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Типы_ремонта.Наименование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Примечания)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Примечания)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+                <a class="btn btn-default" @Html.ActionLink("Назад", "Index")
+</div>
+    }
+</div>

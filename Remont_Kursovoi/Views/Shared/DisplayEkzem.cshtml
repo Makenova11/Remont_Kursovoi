@@ -1,0 +1,11 @@
+﻿@model Remont_Kursovoi.Экземпляры_оборудований
+
+<option value="">Экземпляры</option>
+@if(ViewBag.Slist!=null)
+{
+    foreach(VerificationAttribute item in ViewBag.Slist)
+    {
+        <option value="">@item.TypeId</option>
+    }
+}
+

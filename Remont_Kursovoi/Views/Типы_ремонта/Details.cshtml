@@ -1,0 +1,50 @@
+﻿@model Remont_Kursovoi.Типы_ремонта
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Типы_ремонта</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Наименование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Периодичность)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Периодичность)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Длительность)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Длительность)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Типы_оборудования.Наименование_типа)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Типы_оборудования.Наименование_типа)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Код_ремонта }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

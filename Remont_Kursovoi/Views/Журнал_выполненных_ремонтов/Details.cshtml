@@ -1,0 +1,59 @@
+﻿@model Remont_Kursovoi.Журнал_выполненных_ремонтов
+
+<div>
+    <h4>Журнал выполненных ремонтов</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+          Дата начала
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_начала)
+        </dd>
+
+        <dt>
+            Дата окончания
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_окончания)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Примечания)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Примечания)
+        </dd>
+
+        <dt>
+            Id планового ремонта
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.График_плановых_техобслуживаний.ID_планового_ремонта)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Экземпляры_оборудований.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Экземпляры_оборудований.Наименование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Типы_ремонта.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Типы_ремонта.Наименование)
+        </dd>
+
+    </dl>
+</div>
+<p>
+   <a class=" btn btn-default" @Html.ActionLink("Назад", "Index")
+</p>

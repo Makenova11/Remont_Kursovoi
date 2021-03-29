@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Remont_Kursovoi.ActionJob>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Вывод в каких ремонтах больше задействован работник</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Фамилия)
+        <th>
+            @Html.DisplayNameFor(model => model.Имя)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Отчество)
+        </th>
+        <th>
+            Количество неплановых
+        </th>
+        <th>
+            Количество плановых
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Задействован)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Фамилия)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Имя)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Отчество)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Количество_неплановых)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Количество_плановых)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Задействован)
+    </td>
+
+</tr>
+}
+
+</table>

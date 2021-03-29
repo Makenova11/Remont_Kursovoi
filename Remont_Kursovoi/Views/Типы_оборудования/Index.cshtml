@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Remont_Kursovoi.Типы_оборудования>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<h2>Типы оборудований</h2>
+<p>
+<a class="btn btn-default" @Html.ActionLink("Добавить тип", "Create")
+</p>
+<p>
+    <a class="btn btn-default" @Html.ActionLink("Перейти к экземплярам", "Index", "Экземпляры_оборудований")
+</p>
+
+@*<p>
+    <h4>
+        Фильтровать по типу типу оборудования:
+    </h4>
+    @using (Html.BeginForm("Index", "Экземпляры"))
+    {
+<p>
+    <select class="form-control" name="abc">
+        <option value="0">Все</option>
+        @foreach(var c in ViewBag.Cargos)
+        {
+        <option value=@c.ID_ТипаГруза>@c.ТипГруза</option>
+        }
+    </select>
+    <input type="submit" value="Поиск" class="btn btn-default" />
+</p>
+}
+</p>*@
+
+<table class="table">
+    <tr>
+        <th>
+            Наименование типа
+        </th>
+        <th></th>
+    </tr>
+
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Наименование_типа)
+            </td>
+            <td>
+                <p>
+                    <a class="btn btn-default" @Html.ActionLink("Редактировать", "Edit", new { id = item.ID_типа_оборудования }) |
+                         <a class="btn btn-default"@Html.ActionLink("Удалить", "Delete", new { id = item.ID_типа_оборудования })</p>
+
+</td>
+        </tr>
+    }
+
+</table>
+
+<a class=" btn btn-default" @Html.ActionLink("Назад", "Index", "Home")</a>

@@ -1,0 +1,66 @@
+﻿@*@model IEnumerable<Remont_Kursovoi.Работники>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Ремонты работника</h2>
+<h3>@ViewBag.F @ViewBag.I @ViewBag.O </h3>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Работники.Фамилия)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Работники.Имя)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Работники.Отчество)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Работники.Должность)
+        </th>
+        <th>
+            Роль
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Журнал_выполненных_ремонтов.Дата_начала)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Журнал_выполненных_ремонтов.Дата_окончания)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Работники.Фамилия)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Работники.Имя)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Работники.Отчество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Работники.Должность)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Роли_работников.Наименование)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Журнал_выполненных_ремонтов.Дата_начала)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Журнал_выполненных_ремонтов.Дата_окончания)
+            </td>
+
+        </tr>
+    }
+
+</table>*@
+

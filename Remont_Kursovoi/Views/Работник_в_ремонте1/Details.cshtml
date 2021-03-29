@@ -1,0 +1,42 @@
+﻿@model Remont_Kursovoi.Работник_в_ремонте
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Работник_в_ремонте</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Журнал_выполненных_ремонтов.Примечания)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Журнал_выполненных_ремонтов.Примечания)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Работники.Должность)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Работники.Должность)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Роли_работников.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Роли_работников.Наименование)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

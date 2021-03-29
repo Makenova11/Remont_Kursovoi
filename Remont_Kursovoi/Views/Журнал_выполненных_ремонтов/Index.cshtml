@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Remont_Kursovoi.Журнал_выполненных_ремонтов>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Журнал выполненных ремонтов </h2>
+
+<p>Внести запись в журнал выполненных ремонтов</p>
+<p><a class="btn btn-default" @Html.ActionLink("Новая запись", "Create", "Журнал_выполненных_ремонтов")</a>
+   <a class="btn btn-default" @Html.ActionLink("Работник в ремонте", "Index", "Работник_в_ремонте1")</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Дата начала
+        </th>
+        <th>
+            Дата окончания
+        </th>
+        <th>
+            Экземпляр
+        </th>
+        <th>
+            Тип ремонта
+        </th>
+        <th>
+            Примечания
+        </th>
+        <th></th>
+        <th></th>
+        <th></th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Дата_начала)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Дата_окончания)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Экземпляры_оборудований.Наименование)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Типы_ремонта.Наименование)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Примечания)
+    </td>
+    <td>
+        <a class="btn btn-default" @Html.ActionLink("Редактировать", "Edit", new { id = item.ID_ремонта })
+    </td>
+    <td>
+        <a class="btn btn-default" @Html.ActionLink("Удалить", "Delete", new { id = item.ID_ремонта })
+    </td>
+    <td>
+        <a class="btn btn-default" @Html.ActionLink("Детали", "Details", new { id = item.ID_ремонта })
+    </td>
+</tr>
+    }
+
+</table>

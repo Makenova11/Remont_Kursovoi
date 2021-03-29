@@ -1,0 +1,32 @@
+﻿@model Remont_Kursovoi.Роли_работников
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3>Вы уверены, что хотите удалить эту информацию?</h3>
+<div>
+    <h4>Роли работников</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Роль
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Наименование)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+                <a class="btn btn-default" @Html.ActionLink("Назад", "Index")
+</div>
+    }
+</div>

@@ -1,0 +1,35 @@
+﻿@model Remont_Kursovoi.Models.ЭкземплярыТипы
+  
+
+<br /><br />
+       <div class="container">
+           <div class="form-group">
+               @if (ViewBag.ТипыList != null)
+               {
+                   @Html.DropDownListFor(model => model.ID_типа_оборудования, ViewBag.ТипыList as SelectList, "Типы", new { @class = "form-control" })
+
+               }
+           </div>
+
+    <div class="form-group">
+          
+      @Html.DropDownListFor(model => model.Код_экземпляра, new SelectList(" "),"Экземпляры", new { @class = "form-control" })      
+    </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#Id_типа_оборудования").change(function () {
+            $.get("/Типы_оборудования/GetStateList", { Id_типа_оборудования: $("#Id_типа_оборудования").val() }, function (data) {
+                $("#Код_экземпляра").empty();
+                $.each(data, function (index, row) {
+                    $("#Код_экземпляра").append("<option value='" + row.Код_экземпляра +"'>"+ row.Наименование +"</option>")
+
+                });
+
+            });
+        })
+
+    });
+</script>
+

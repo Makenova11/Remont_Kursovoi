@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Remont_Kursovoi.Работники>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Работники</h2>
+
+
+<p>
+    <a class="btn btn-default" @Html.ActionLink("Добавить работника", "LogUp")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Должность)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Фамилия)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Имя)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Отчество)
+        </th>
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Должность)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Фамилия)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Имя)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Отчество)
+            </td>
+
+
+            <td>     
+                <p>
+                    <a class="btn btn-default" @Html.ActionLink("Редактировать", "Edit", new { id = item.ID_работника }) |
+                <a class="btn btn-default" @Html.ActionLink("Удалить", "Delete", new { id = item.ID_работника })</p>
+</td>
+        </tr>
+    }
+
+</table>
+
+
+<article>
+    <h4>
+        <b>Чтобы вывести работников, у которых n-ый ремонт был выполнен с соблюдением условной длительности введите номер ремонта по счёту</b>  
+    </h4>
+    @using (Html.BeginForm("notlate_info", "Работники", FormMethod.Post))
+    {
+        <div>
+            <div class="form-group">
+                <h5> <b>Номер </b></h5>
+                <div class="col-md-10, margin-bottom: 15px, margin-bottom: 15px">
+                    <input type="number" name="number" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="submit" value="Вывести работников" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+</article>

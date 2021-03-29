@@ -1,0 +1,41 @@
+﻿<!DOCTYPE>
+<html>
+    @{
+        ViewBag.Title = "Home Page";
+    }
+    <head>
+        @Styles.Render("~/Content/Site.css")
+    </head>
+
+        <body>
+            <background1>
+                <background1 /><br /><br /><br /><br /><br /><br />
+                <div class="text-center"><h1><b>Ремонты оборудования</b></h1></div>
+                <br /><br />
+                <main>
+                    <div class="row">
+                        <div class="col-md-4" style="padding-left:100px">
+                            <p><h3><b>Типы ремонтов</b></h3></p>
+                            <p><a class="btn btn-default" @Html.ActionLink("Подробнее", "Index", "Типы_ремонта")</a></p>
+                        </div>
+                        <div class="col-md-4">
+                            <p>
+                                <h3><b>Хотите узнать в каких ремонтах работник больше принимал участие?</b></h3>
+                            </p>
+                            <p> <a class="btn btn-default" @Html.ActionLink("Тогда нажимайте сюда", "Index", "ActionJobs")</a></p>
+                        </div>
+                        <div class="col-md-4">
+                            <p><h3><b>Информация о возможных ролях работника</b></h3></p>
+                            <p><a class="btn btn-default" @Html.ActionLink("Роли", "Index", "Роли_работников")</a></p>
+                        </div>
+                        @*<div class="col-md-4" style="padding-left:100px">
+                            <p><h3><b>Работник в ремонте</b></h3></p>
+                            <p><a class="btn btn-default" @Html.ActionLink("Подробнее", "Index", "Работник_в_ремонте")</a></p>
+                        </div>*@
+
+                    </div>
+                </main>
+
+</body>
+    
+</html>

@@ -1,0 +1,48 @@
+﻿@model Remont_Kursovoi.Экземпляры_оборудований
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3>Вы уверены что хотите удалить эту запись?</h3>
+<div>
+    <h4>Экземпляры оборудований</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Наименование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Состояние_оборудования.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Состояние_оборудования.Наименование)
+        </dd>
+
+        <dt>
+            Наименование типа
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Типы_оборудования.Наименование_типа)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+           <a class="btn btn-default" @Html.ActionLink("Назад", "Index")
+        </div>
+    }
+</div>

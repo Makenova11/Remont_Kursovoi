@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Remont_Kursovoi.notlate_Result>
+@{
+    ViewBag.Title = "notlate_info";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Фамилия)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Имя)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Отчество)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Длительность)
+        </th>
+        <th>
+            Номер
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Фамилия)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Имя)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Отчество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Длительность)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Номер_ремонта)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,35 @@
+﻿@model Remont_Kursovoi.Типы_оборудования
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3>Вы уверены что хотите удалить эту информацию?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Наименование типа
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Наименование_типа)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" />
+        </div>
+    }
+</div>
+<div>
+    <a class="btn btn-default" @Html.ActionLink("Назад", "Index")</a>
+</div>

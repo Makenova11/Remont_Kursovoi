@@ -1,0 +1,72 @@
+﻿@model Remont_Kursovoi.Работники
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3>Вы уверены что хотите удалить этого работника?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Должность)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Должность)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Фамилия)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Фамилия)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Имя)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Имя)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Отчество)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Отчество)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Логин)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Логин)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Пароль)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Пароль)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+                <a class="btn btn-default" @Html.ActionLink("Назад", "Index")
+</div>
+    }
+</div>

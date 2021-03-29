@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Remont_Kursovoi.Типы_оборудования>
+@{
+    ViewBag.Title = "action";
+}
+
+
+@using (Html.BeginForm("action"))
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.AntiForgeryToken()
+                    @Html.DropDownList("ID_типа_оборудования", null, htmlAttributes: new { @class = "form-control" })
+                </td>
+                <td>
+
+                    <input type="submit" value="Применить" class="btn btn-default " />
+                </td>
+            </tr>
+        </table>
+    }

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Remont_Kursovoi.Работник_в_ремонте>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Работник в ремонте</h2>
+
+<p>
+   <a class="btn btn-default" @Html.ActionLink("Добавить", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Работники.Фамилия)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Работники.Имя)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Работники.Отчество)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Работники.Должность)
+        </th>
+        <th>
+           ID ремонта
+        </th>
+        <th>
+            Дата начала
+
+        </th>
+        <th>
+            Дата окончания
+
+        </th>
+        <th>
+            Роль
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Работники.Фамилия)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Работники.Имя)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Работники.Отчество)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Работники.Должность)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Журнал_выполненных_ремонтов.ID_ремонта)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Журнал_выполненных_ремонтов.Дата_начала)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Журнал_выполненных_ремонтов.Дата_окончания)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Роли_работников.Наименование)
+    </td>
+    <td>
+        @*<a class="btn btn-default"@Html.ActionLink("Редактировать", "Edit", new { id = item.ID_работника })*@
+    </td>
+    <td></td>
+</tr>
+}
+
+</table>
+<div>
+    <p><a class="btn btn-default" @Html.ActionLink("Назад", "Index","Журнал_выполненных_ремонтов")</p>
+</div>

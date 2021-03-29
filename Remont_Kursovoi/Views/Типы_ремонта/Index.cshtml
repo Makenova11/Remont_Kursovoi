@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Remont_Kursovoi.Типы_ремонта>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Виды ремонтов на предприятии</h2>
+
+<p>
+   <a class="btn btn-default" @Html.ActionLink("Добавить запись", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Код ремонта
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Наименование)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Периодичность)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Длительность)
+        </th>
+        <th>
+            Наименование типа
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Код_ремонта)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Наименование)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Периодичность)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Длительность)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Типы_оборудования.Наименование_типа)
+    </td>
+    <td>
+        <p>
+            <a class="btn btn-default" @Html.ActionLink("Редактировать", "Edit", new { id = item.Код_ремонта }) |
+   <a class="btn btn-default" @Html.ActionLink("Удалить", "Delete", new { id = item.Код_ремонта })</p>
+</td>
+</tr>
+}
+
+</table>
